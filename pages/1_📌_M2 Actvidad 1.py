@@ -30,7 +30,7 @@ st.header("Solución")
 
 # Mostrar título en la aplicación
 st.title("Nuevas Tecnologias"
-"Actividad 1 - Creación de DataFrames")
+" Actividad 1 - Creación de DataFrames")
 
 # Agregar una descripción debajo del título
 st.write("En esta actividad, aprenderemos a crear y manipular DataFrames usando la librerías")
@@ -48,7 +48,7 @@ st.write("### DataFrame de Libros")
 st.dataframe(df_libros)
 
 
-st.title("Actividad 2 - Creación de DataFrames con Lista de Diccionarios")
+st.title(" Creación de DataFrames con Lista de Diccionarios")
 st.write("En esta actividad, trabajaremos con una lista de diccionarios para representar información sobre ciudades.")
 
 ciudades = [
