@@ -1,4 +1,5 @@
 import streamlit as st
+import pandas as pd
 
 # Configuración de la página
 st.set_page_config(   
@@ -27,3 +28,37 @@ st.markdown("""
 
 st.header("Solución")
 
+# Mostrar título en la aplicación
+st.title("Nuevas Tecnologias"
+"Actividad 1 - Creación de DataFrames")
+
+# Agregar una descripción debajo del título
+st.write("En esta actividad, aprenderemos a crear y manipular DataFrames usando la librerías")
+
+libros = {
+    "título": ["El señor de los anillos", "Matar a un ruiseñor", "El principito", "Don Quijote de la Mancha"],
+    "autor": ["J.R.R. Tolkie", "Harper Lee", "Antoine de Saint-Exupéry", "Miguel de Cervantes"],
+    "año de publicación": [1954, 1960, 1943, 1605],
+    "género": ["Fantasía épica", "Ficción literaria", "Fábula", "Novela clásica"]
+}
+
+df_libros = pd.DataFrame(libros)
+
+st.write("### DataFrame de Libros")
+st.dataframe(df_libros)
+
+
+st.title("Actividad 2 - Creación de DataFrames con Lista de Diccionarios")
+st.write("En esta actividad, trabajaremos con una lista de diccionarios para representar información sobre ciudades.")
+
+ciudades = [
+    {"nombre": "Medellin", "población": 22634570, "país": "Colombia"},
+    {"nombre": "Ciudad de Mexico", "población": 929944, "país": "Mexico"},
+    {"nombre": "París", "población": 2148000, "país": "Francia"},
+    {"nombre": "Buenos Aires", "población": 2890151, "país": "Argentina"}
+]
+
+df_ciudades = pd.DataFrame(ciudades)
+
+st.write("### Información de Ciudades")
+st.dataframe(df_ciudades)
