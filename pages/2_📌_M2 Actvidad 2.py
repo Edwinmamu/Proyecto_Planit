@@ -1,4 +1,6 @@
 import streamlit as st
+import pandas as pd
+import io
 
 # Configuración de la página
 st.set_page_config(   
@@ -27,3 +29,51 @@ st.markdown("""
 
 st.header("Solución")
 
+df = pd.read_csv('datasets/estudiantes_colombia.csv')
+
+
+st.dataframe(df)
+
+
+st.title("Ver las primeras 5 filas")
+st.write (df.head(5))
+
+
+st.title("Ver las ultimas 5 filas")
+st.write(df.tail(5))
+
+
+
+st.subheader("Ver Informacion (Resumen tecnico)")
+info_df = pd.DataFrame({
+    "Columna": df.columns,
+    "Tipo de dato": df.dtypes.values,
+    "Valores nulos": df.isnull().sum().values,
+    "Valores únicos": df.nunique().values
+})
+st.dataframe(info_df)
+
+
+
+st.title("Estadísticas descriptivas de columnas numéricas")
+st.write(df.describe())
+
+
+st.title("Seleccion columnas especificas")
+st.write (df [["nombre", "edad", "promedio"]])
+
+
+st.title("Filtrar estudiantes por promedio")
+
+st.header("Filtrar por Promedio")
+promedio_min = st.slider(
+    "Selecciona el promedio mínimo:",
+    min_value=float(df["promedio"].min()),
+    max_value=float(df["promedio"].max()),
+    value=4.0,
+    step=0.1
+)
+
+df_filtrado = df[df["promedio"] >= promedio_min]
+st.write(f"Estudiantes con promedio mayor o igual a {promedio_min}: {len(df_filtrado)}")
+st.dataframe(df_filtrado)

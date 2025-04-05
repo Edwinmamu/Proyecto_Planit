@@ -153,13 +153,11 @@ data = {
 df = pd.DataFrame(data)
 
 # Guardar en un archivo Excel
-df.to_excel("data.xlsx", index=False, engine="openpyxl")
-
-print("Archivo Excel creado exitosamente.")
+df.to_excel("static\data.xlsx", index=False, engine="openpyxl")
 
 
 # Leer el archivo Excel 
-df_excel = pd.read_excel("data.xlsx", engine="openpyxl")
+df_excel = pd.read_excel("static\data.xlsx", engine="openpyxl")
 
 st.write("### Datos desde Excel")
 st.dataframe(df_excel)
