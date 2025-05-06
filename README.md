@@ -1,4 +1,4 @@
-Perfecto, aquí tienes un `README.md` **actualizado en formato GitHub Markdown**, incluyendo:
+
 
 * Descripción del proyecto
 * Estructura de carpetas
