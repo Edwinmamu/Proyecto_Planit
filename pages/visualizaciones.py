@@ -5,7 +5,7 @@ from pages.load_data import cargar_datos
 
 st.header("📈 Visualizaciones")
 
-df = cargar_datos("data\dataset.csv")
+df = cargar_datos("data/dataset.csv")
 
 # Gráfico de correlación
 st.subheader("Mapa de calor de correlación")
